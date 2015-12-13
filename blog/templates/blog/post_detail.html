@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="post-title">
+        <h1>{{ post.title }}</h1>
+    </div>
+    <div class="post-content">
+        {% if post.photo %}
+            <img src="{{ post.photo.url }}" />
+        {% endif %}
+      
+        {{ post.content | linebreaks }}
+    </div>
+    <hr>
+    <a href="{% url 'blog.views.index' %}">
+      목록으로
+    </a>
+</div>
+{% endblock %}
